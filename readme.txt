@@ -21,6 +21,7 @@ This plugin provides a sidebar widget that creates a slideshow of images. The so
 3. Activate the plugin through the 'Plugins' menu in WordPress
 4. Add a sidebar in the desired place of your theme, where you want the slide show to appear. Use <?php dynamic_sidebar('landing_slide'); ?>
 5. Add the Nivo Slider Widget to the newly created sidebar and proceed to upload the desired images using the `Open Image Gallery` button.
+6. Use `Insert to post` button to add the image to the widget.
 
 == Frequently asked questions ==
 
