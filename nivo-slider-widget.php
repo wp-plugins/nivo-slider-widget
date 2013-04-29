@@ -86,13 +86,13 @@ Author URI: #
 // REGISTER STYLE AND SCRIPTS
 
 	function register_frontend_styles_scripts(){
-		wp_register_style("nivo_default_css", WP_PLUGIN_URL."/slider_css/default.css");
-		wp_register_style("nivo_css", WP_PLUGIN_URL."/slider_css/nivo-slider.css");
+		wp_register_style("nivo_default_css", WP_PLUGIN_URL."/nivo-slider-widget/slider_css/default.css");
+		wp_register_style("nivo_css", WP_PLUGIN_URL."/nivo-slider-widget/slider_css/nivo-slider.css");
 		wp_enqueue_style("nivo_default_css");
 		wp_enqueue_style("nivo_css");
 		
-		wp_register_script("nivo_js", WP_PLUGIN_URL."/slider_js/jquery.nivo.slider.js", array('jquery'));
-		wp_register_script("brad_js", WP_PLUGIN_URL."/slider_js/brad.js", array('jquery'));
+		wp_register_script("nivo_js", WP_PLUGIN_URL."/nivo-slider-widget/slider_js/jquery.nivo.slider.js", array('jquery'));
+		wp_register_script("brad_js", WP_PLUGIN_URL."/nivo-slider-widget/slider_js/brad.js", array('jquery'));
 		wp_enqueue_script("nivo_js");
 		wp_enqueue_script("brad_js");
 	}
@@ -100,16 +100,16 @@ Author URI: #
 	add_action('wp_enqueue_scripts', register_frontend_styles_scripts());
 	
 	function wptuts_options_enqueue_scripts() {  
+			
 		wp_register_script( 'wptuts-upload', get_template_directory_uri() .'/wptuts-options/js/wptuts-upload.js', array('jquery','media-upload','thickbox') );  
   
-			wp_enqueue_script('thickbox');  
-			wp_enqueue_style('thickbox');  
+		wp_enqueue_script('thickbox');  
+		wp_enqueue_style('thickbox');  
 
-			wp_enqueue_script('media-upload');   
-			wp_register_script('sss-media-uploader-functions', WP_PLUGIN_URL . '/slider_js/media.uploader.functions.js');
-			wp_register_script('sss-media-uploader-script', WP_PLUGIN_URL . '/slider_js/bradly.js', array('jquery', 'media-upload', 'thickbox', 'sss-media-uploader-functions'));
-			
-			wp_enqueue_script('sss-media-uploader-script');
+		wp_enqueue_script('media-upload');  
+		wp_register_script('sss-media-uploader-script', WP_PLUGIN_URL . '/nivo-slider-widget/slider_js/bradly.js', array('jquery', 'media-upload', 'thickbox'));
+		
+		wp_enqueue_script('sss-media-uploader-script');
    
 	}  
 	add_action('admin_enqueue_scripts', 'wptuts_options_enqueue_scripts'); 
